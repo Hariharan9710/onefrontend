@@ -1,0 +1,46 @@
+/* Tailwind directives removed (handled in main index.css) */
+
+/* optional global styles */
+* {
+  transition: all .2s ease-in-out;
+  font-family: 'Poppins', sans-serif;
+}
+
+.fade-in {
+  animation: fadeIn .6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* you can use @layer components + @apply now */
+@layer components {
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400;
+  }
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  background-color: #fff;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #a855f7;
+  /* purple-500 */
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.3);
+}
