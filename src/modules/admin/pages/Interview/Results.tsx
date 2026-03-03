@@ -69,7 +69,7 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import api from "../../services/api";
+import api from "../../../interview/services/api";
 
 type TestResult = {
   test_id: number;
@@ -77,6 +77,7 @@ type TestResult = {
   score: number;
   result: string;
   start_time: string;
+  skills: string | null;
 };
 
 export default function Results() {
@@ -175,6 +176,8 @@ export default function Results() {
                 <th className="py-3 px-4 border-b">Candidate</th>
                 <th className="py-3 px-4 border-b">Score</th>
                 <th className="py-3 px-4 border-b">Status</th>
+                <th className="py-3 px-4 border-b">Test Date</th>
+                <th className="py-3 px-4 border-b">Test Taken</th>
                 <th className="py-3 px-4 border-b">Action</th>
               </tr>
             </thead>
@@ -194,9 +197,38 @@ export default function Results() {
                     {r.result}
                   </td>
 
+                  {/* Test Date */}
+                  <td className="py-3 px-4 text-gray-600">
+                    {r.start_time
+                      ? new Date(r.start_time).toLocaleDateString("en-IN", {
+                          day: "2-digit",
+                          month: "short",
+                          year: "numeric",
+                        })
+                      : "—"}
+                  </td>
+
+                  {/* Test Taken (Skills) */}
+                  <td className="py-3 px-4">
+                    {r.skills ? (
+                      <div className="flex flex-wrap gap-1">
+                        {r.skills.split(",").map((skill, i) => (
+                          <span
+                            key={i}
+                            className="px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs font-medium"
+                          >
+                            {skill.trim()}
+                          </span>
+                        ))}
+                      </div>
+                    ) : (
+                      <span className="text-gray-400 text-sm">—</span>
+                    )}
+                  </td>
+
                   <td className="py-3 px-4">
                     <Link
-                      to={`/interview/admin/test-answers/${r.test_id}`}
+                      to={`/admin-panel/interview/test-answers/${r.test_id}`}
                       className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
                     >
                       View

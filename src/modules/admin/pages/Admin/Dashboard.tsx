@@ -18,6 +18,13 @@ import ProjectAssignment from '../Project/ProjectAssignment';
 import AdminAttendance from '../Attendance/AdminAttendance';
 import AdminDashboard from './AdminDashboard';
 import ProfilePage from '../Profile/ProfilePage';
+import AdminAddCandidate from '../Interview/AdminAddCandidate';
+import AdminOnboarding from '../Interview/AdminOnboarding';
+import AdminQuestions from '../Interview/AdminQuestions';
+import AdminTestGenerator from '../Interview/AdminTestGenerator';
+import AdminViewCandidates from '../Interview/AdminViewCandidates';
+import AdminViewTestAnswers from '../Interview/AdminViewTestAnswers';
+import Results from '../Interview/Results';
 
 
 const Dashboard: React.FC = () => {
@@ -45,6 +52,15 @@ const Dashboard: React.FC = () => {
           <Route path="projects/edit/:id" element={<ProjectForm />} />
           <Route path="projects/:id" element={<ProjectDetails />} />
           <Route path="projects/:id/assign" element={<ProjectAssignment />} />
+          
+          {/* Interview Management Routes */}
+          <Route path="interview/add-candidate" element={<AdminAddCandidate />} />
+          <Route path="interview/onboarding" element={<AdminOnboarding />} />
+          <Route path="interview/questions" element={<AdminQuestions />} />
+          <Route path="interview/generate-test" element={<AdminTestGenerator />} />
+          <Route path="interview/view-candidates" element={<AdminViewCandidates />} />
+          <Route path="interview/test-answers/:testId" element={<AdminViewTestAnswers />} />
+          <Route path="interview/results" element={<Results />} />
         </Routes>
       </Box>
     </Box>

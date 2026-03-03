@@ -55,6 +55,8 @@ const Sidebar: React.FC = () => {
       { text: 'Leaves', icon: <EventNote />, path: '/admin-panel/leaves' },
       { text: 'Meetings', icon: <MeetingRoom />, path: '/admin-panel/meetings' },
       { text: 'Manage Requests', icon: <RequestPage />, path: '/admin-panel/requests' },
+      { text: 'Interview Results', icon: <EventNote />, path: '/admin-panel/interview/results' },
+      { text: 'Onboarding', icon: <Person />, path: '/admin-panel/interview/onboarding' },
     ];
   } else {
     // ADMIN menu items
@@ -68,6 +70,12 @@ const Sidebar: React.FC = () => {
       { text: 'Leaves', icon: <EventNote />, path: '/admin-panel/leaves' },
       { text: 'Meetings', icon: <MeetingRoom />, path: '/admin-panel/meetings' },
       { text: 'Manage Requests', icon: <RequestPage />, path: '/admin-panel/requests' },
+      { text: 'Interview Mgmt', icon: <Work />, path: '/admin-panel/interview/view-candidates' },
+      { text: 'Add Candidate', icon: <Person />, path: '/admin-panel/interview/add-candidate' },
+      { text: 'Manage Questions', icon: <MeetingRoom />, path: '/admin-panel/interview/questions' },
+      { text: 'Generate Test', icon: <AttachMoney />, path: '/admin-panel/interview/generate-test' },
+      { text: 'Interview Results', icon: <EventNote />, path: '/admin-panel/interview/results' },
+      { text: 'Onboarding', icon: <Person />, path: '/admin-panel/interview/onboarding' },
     ];
   }
 

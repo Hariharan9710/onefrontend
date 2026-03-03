@@ -5,7 +5,8 @@ import InterviewApp from './modules/interview/InterviewApp';
 import { AuthProvider } from './context/shared/AuthContext';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { theme } from './styles/theme';
-import './App.css';
+import './App.css';   
+
 
 function LandingPage() {
   return (

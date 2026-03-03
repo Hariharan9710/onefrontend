@@ -6,18 +6,11 @@ import {
   Link,
 } from "react-router-dom";
 
-import AdminAddCandidate from "./components/AdminAddCandidate";
 import CandidateLogin from "./components/CandidateLogin";
 import CandidateRegisterForm from "./components/CandidateRegisterForm";
 import CandidateStartTest from "./components/CandidateStartTestProps";
 import TestPage from "./components/Test/TestPage";
 import TestSubmitted from "./components/Test/TestSubmitted";
-import Results from "./components/Test/Results";
-import AdminViewCandidates from "./components/AdminViewCandidates";
-import AdminOnboarding from "./components/AdminOnboarding";
-import AdminQuestions from "./components/AdminQuestions";
-import AdminTestGenerator from "./components/AdminTestGenerator";
-import AdminViewTestAnswers from "./components/AdminViewTestAnswers";
 
 interface CandidateData {
   id: number;
@@ -44,36 +37,11 @@ const InterviewApp: React.FC = () => {
 
           <div className="flex space-x-6 text-gray-600 font-medium">
             <Link
-              to="/interview/admin/add-candidate"
-              className="hover:text-green-600 transition"
-            >
-              Admin Add
-            </Link>
-            <Link
               to="/interview/candidate/login"
               className="hover:text-green-600 transition"
             >
               Candidate Login
             </Link>
-            <Link to="/interview/results" className="hover:text-green-600 transition">
-              HR Results
-            </Link>
-            <Link
-               to="/interview/admin/view-candidates"
-                className="hover:text-green-600 transition"
-              >
-             View Candidates
-              </Link>
- 
-              <Link to="/interview/hr/onboarding" className="hover:text-green-600 transition">
-               HR Onboarding
-              </Link>
-              <Link to="/interview/admin/questions" className="hover:text-green-600 transition">
-                   Manage Questions
-               </Link>
-              <Link to="/interview/admin/generate-test" className="hover:text-green-600 transition">
-               Generate Test
-               </Link>
           </div>
         </div>
       </nav>
@@ -84,11 +52,8 @@ const InterviewApp: React.FC = () => {
           {/* Default route */}
           <Route
             path="/"
-            element={<Navigate to="admin/add-candidate" replace />}
+            element={<Navigate to="candidate/login" replace />}
           />
-
-          {/* Admin Add Candidate */}
-          <Route path="admin/add-candidate" element={<AdminAddCandidate />} />
 
           {/* Candidate Login */}
           <Route
@@ -126,14 +91,6 @@ const InterviewApp: React.FC = () => {
           {/* Test Submitted Page */}
           <Route path="test-submitted" element={<TestSubmitted />} />
 
-          {/* HR Results */}
-          <Route path="results" element={<Results />} />
-          <Route path="admin/view-candidates" element={<AdminViewCandidates />} />
-          <Route path="hr/onboarding" element={<AdminOnboarding />} />
-          <Route path="admin/questions" element={<AdminQuestions />} />
-            <Route path="admin/generate-test" element={<AdminTestGenerator />} />
-           <Route path="admin/test-answers/:testId" element={<AdminViewTestAnswers />} />
-
           {/* 404 Page */}
           <Route
             path="*"
@@ -143,10 +100,10 @@ const InterviewApp: React.FC = () => {
                   🚫 404 — Page Not Found
                 </h2>
                 <Link
-                  to="/interview"
+                  to="/interview/candidate/login"
                   className="mt-6 px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
                 >
-                  🏠 Go Home
+                  🏠 Go to Login
                 </Link>
               </div>
             }

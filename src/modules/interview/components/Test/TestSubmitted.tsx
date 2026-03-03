@@ -11,10 +11,10 @@ export default function TestSubmitted() {
           Thank you for completing the test. Our HR team will review your performance and contact you if you are shortlisted.
         </p>
         <Link
-          to="/"
+          to="/interview/candidate/login"
           className="px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition"
         >
-          🏠 Go to Home
+          🏠 Go to Login
         </Link>
       </div>
     </div>
